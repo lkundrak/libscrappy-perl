@@ -1,0 +1,25 @@
+Source: libscrappy-perl
+Section: perl
+Priority: optional
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Onur Aslan <onur@>
+Build-Depends: debhelper (>= 8)
+Build-Depends-Indep: perl
+Standards-Version: 3.9.3
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libscrappy-perl.git
+Vcs-Git: git://git.debian.org/pkg-perl/packages/libscrappy-perl.git
+Homepage: http://search.cpan.org/dist/Scrappy/
+
+Package: libscrappy-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Description: The All Powerful Web Spidering, Scraping, Creeping Crawling Framework
+ Scrappy is an easy (and hopefully fun) way of scraping, spidering, and/or
+ harvesting information from web pages, web services, and more. Scrappy is a
+ feature rich, flexible, intelligent web automation tool.
+ .
+ Scrappy (pronounced Scrap+Pee) == 'Scraper Happy' or 'Happy Scraper'; If you
+ like you may call it Scrapy (pronounced Scrape+Pee) although Python has a web
+ scraping framework by that name and this module is not a port of that one.
+ .
+ This description was automagically extracted from the module by dh-make-perl.
