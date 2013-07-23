@@ -4,7 +4,23 @@ Priority: optional
 Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
 Uploaders: Onur Aslan <onur@onur.im>
 Build-Depends: debhelper (>= 8)
-Build-Depends-Indep: perl
+Build-Depends-Indep: perl,
+  libarray-unique-perl,
+  libdatetime-perl,
+  libdatetime-format-sqlite-perl,
+  libfile-find-rule-perl,
+  libfile-sharedir-perl,
+  libfile-slurp-perl,
+  libfile-util-perl,
+  libhtml-tree-perl,
+  libmoose-perl,
+  libparallel-forkmanager-perl,
+  libstring-tt-perl,
+  libtemplate-perl,
+  liburi-perl,
+  libwww-mechanize-perl,
+  libweb-scraper-perl,
+  libyaml-syck-perl
 Standards-Version: 3.9.3
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libscrappy-perl.git
 Vcs-Git: git://git.debian.org/pkg-perl/packages/libscrappy-perl.git
