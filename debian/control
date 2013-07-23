@@ -38,5 +38,3 @@ Description: The All Powerful Web Spidering, Scraping, Creeping Crawling Framewo
  Scrappy (pronounced Scrap+Pee) == 'Scraper Happy' or 'Happy Scraper'; If you
  like you may call it Scrapy (pronounced Scrape+Pee) although Python has a web
  scraping framework by that name and this module is not a port of that one.
- .
- This description was automagically extracted from the module by dh-make-perl.
