@@ -24,7 +24,7 @@ Build-Depends-Indep: perl,
   libyaml-syck-perl
 Standards-Version: 3.9.4
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libscrappy-perl.git
-Vcs-Git: git://git.debian.org/pkg-perl/packages/libscrappy-perl.git
+Vcs-Git: git://anonscm.debian.org/pkg-perl/packages/libscrappy-perl.git
 Homepage: https://metacpan.org/release/Scrappy/
 
 Package: libscrappy-perl
