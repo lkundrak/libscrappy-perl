@@ -22,7 +22,7 @@ Build-Depends-Indep: perl,
   libwww-mechanize-perl,
   libweb-scraper-perl,
   libyaml-syck-perl
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libscrappy-perl.git
 Vcs-Git: git://git.debian.org/pkg-perl/packages/libscrappy-perl.git
 Homepage: http://search.cpan.org/dist/Scrappy/
