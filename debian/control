@@ -34,7 +34,3 @@ Description: The All Powerful Web Spidering, Scraping, Creeping Crawling Framewo
  Scrappy is an easy (and hopefully fun) way of scraping, spidering, and/or
  harvesting information from web pages, web services, and more. Scrappy is a
  feature rich, flexible, intelligent web automation tool.
- .
- Scrappy (pronounced Scrap+Pee) == 'Scraper Happy' or 'Happy Scraper'; If you
- like you may call it Scrapy (pronounced Scrape+Pee) although Python has a web
- scraping framework by that name and this module is not a port of that one.
