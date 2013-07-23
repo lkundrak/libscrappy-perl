@@ -1,0 +1,38 @@
+Description: spelling errors
+Author: Onur Aslan <onur@onur.im>
+
+--- a/lib/Scrappy.pm
++++ b/lib/Scrappy.pm
+@@ -108,12 +108,12 @@
+ 
+ =head2 FEATURES
+ 
+-Scrappy provides a framework containing all the tools neccessary to create a
++Scrappy provides a framework containing all the tools necessary to create a
+ simple yet powerful web scraper. At its core, Scrappy loads an array of
+ features for access control, event logging, session handling, url matching,
+ web request and response handling, proxy management, web scraping, and downloading.
+ 
+-Futhermore, Scrappy provides a simple Moose-based plugin system that allows Scrappy
++Furthermore, Scrappy provides a simple Moose-based plugin system that allows Scrappy
+ to be easily extended.
+ 
+     my  $scraper = Scrappy->new;
+@@ -364,7 +364,7 @@
+ 
+     my  $scraper = Scrappy->new;
+         
+-        $scraper->debug(1); # unneccessary, on by default
++        $scraper->debug(1); # unnecessary, on by default
+         $scraper->logger->verbose(1); # more detailed log
+         
+         $scraper->log('error', 'Somthing bad happened');
+@@ -528,7 +528,7 @@
+ =head2 plugin
+ 
+ The plugin method allow you to load a plugin. Using the appropriate case is
+-recommended but not neccessary. See L<Scrappy::Plugin> for more information.
++recommended but not necessary. See L<Scrappy::Plugin> for more information.
+ 
+     my $scraper = Scrappy->new;
+     
