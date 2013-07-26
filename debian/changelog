@@ -1,5 +1,11 @@
 libscrappy-perl (0.94112090-1) UNRELEASED; urgency=low
 
+  TODO:
+  - please forward the patch upstream and add the URL
+  - (aesthetic) I usually use "$(RM) -v" instead of "rm" in debian/rules;
+    -v is nice to see if actually something is removed; ok, with plain "rm" we
+    got an error otherwise :)
+
   * Initial Release. (Closes: #717907)
 
  -- Onur Aslan <onur@onur.im>  Tue, 23 Jul 2013 17:16:13 +0300
