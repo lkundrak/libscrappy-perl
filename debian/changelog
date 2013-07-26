@@ -1,5 +1,15 @@
 libscrappy-perl (0.94112090-1) UNRELEASED; urgency=low
 
+  NOTES, QUESTIONS, TODOS:
+  - maybe this package should be named snappy?
+    depends on if /usr/bin/snappy is the main element or the modules.
+    cf. http://pkg-perl.alioth.debian.org/policy.html#package_naming_policy
+  - ./usr/share/perl5/perltidy.pl looks weird. should probably be removed from
+    the binary package.
+  - spelling.patch: Bug:/Forwarded: missing
+  - d/control: Depends is too empty ...
+  - d/copyright: missing year(s) of upstream copyright
+
   * Initial Release. (Closes: #717907)
 
  -- Onur Aslan <onur@onur.im>  Tue, 23 Jul 2013 17:16:13 +0300
