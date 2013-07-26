@@ -1,5 +1,6 @@
 Description: spelling errors
 Author: Onur Aslan <onur@onur.im>
+Forwarded: no
 
 --- a/lib/Scrappy.pm
 +++ b/lib/Scrappy.pm
