@@ -29,7 +29,25 @@ Homepage: https://metacpan.org/release/Scrappy/
 
 Package: libscrappy-perl
 Architecture: all
-Depends: ${misc:Depends}, ${perl:Depends}
+Depends: ${misc:Depends},
+  ${perl:Depends},
+  libarray-unique-perl,
+  libdatetime-perl,
+  libdatetime-format-sqlite-perl,
+  libfile-find-rule-perl,
+  libfile-sharedir-perl,
+  libfile-sharedir-install-perl,
+  libfile-slurp-perl,
+  libfile-util-perl,
+  libhtml-tree-perl,
+  libmoose-perl,
+  libparallel-forkmanager-perl,
+  libstring-tt-perl,
+  libtemplate-perl,
+  liburi-perl,
+  libwww-mechanize-perl,
+  libweb-scraper-perl,
+  libyaml-syck-perl
 Description: powerful web spidering, scraping, creeping crawling framework
  Scrappy is an easy (and hopefully fun) way of scraping, spidering, and/or
  harvesting information from web pages, web services, and more. Scrappy is a
