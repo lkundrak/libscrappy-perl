@@ -8,4 +8,4 @@ TMP     = $(CURDIR)/debian/$(PACKAGE)
 
 override_dh_auto_install:
 	dh_auto_install
-	rm $(TMP)/usr/share/perl5/perltidy.pl
+	$(RM) -v $(TMP)/usr/share/perl5/perltidy.pl
