@@ -1,6 +1,7 @@
 Description: spelling errors
 Author: Onur Aslan <onur@onur.im>
-Forwarded: no
+Bug: https://rt.cpan.org/Ticket/Display.html?id=87399
+Forwarded: https://rt.cpan.org/Ticket/Display.html?id=87399
 
 --- a/lib/Scrappy.pm
 +++ b/lib/Scrappy.pm
