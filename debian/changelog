@@ -1,4 +1,4 @@
-libscrappy-perl (0.94112090-1) UNRELEASED; urgency=low
+libscrappy-perl (0.94112090-1) unstable; urgency=low
 
   * Initial Release. (Closes: #717907)
 
