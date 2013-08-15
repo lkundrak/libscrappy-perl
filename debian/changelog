@@ -1,4 +1,30 @@
-libscrappy-perl (0.94112090-1) unstable; urgency=low
+libscrappy-perl (0.94112090-1) UNRELEASED; urgency=low
+
+  TODO:
+  - when I set TEST_LIVE, the package fails to build. The error I get is:
+
+        t/00_test_function_content.t ............ ok
+
+        #   Failed test at t/00_test_function_control.t line 11.
+
+        #   Failed test at t/00_test_function_control.t line 12.
+
+        #   Failed test at t/00_test_function_control.t line 13.
+        Exiting subroutine via next at lib/Scrappy/Scraper/Control.pm line 53.
+        Can't "next" outside a loop block at lib/Scrappy/Scraper/Control.pm line 53.
+        # Looks like you planned 12 tests but ran 7.
+        # Looks like you failed 3 tests of 7 run.
+        # Looks like your test exited with 255 just after 7.
+        t/00_test_function_control.t ............ 
+        Dubious, test returned 255 (wstat 65280, 0xff00)
+        Failed 8/12 subtests 
+
+    The '"next" outside a loop block' does indeed look very wrong (should this
+    be 'return'?), but why is that code path hit in the first place?
+
+  - Debian is going to transition to Perl 5.18 very soon, but
+    https://rt.cpan.org/Public/Bug/Display.html?id=82142 indicates that this
+    package is not ready. Can you investigate?
 
   * Initial Release. (Closes: #717907)
 
