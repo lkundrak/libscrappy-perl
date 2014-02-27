@@ -1,5 +1,6 @@
 libscrappy-perl (0.94112090-1) UNRELEASED; urgency=low
 
+  [ Onur Aslan ]
   TODO:
   - when I set TEST_LIVE, the package fails to build. The error I get is:
 
@@ -27,5 +28,8 @@ libscrappy-perl (0.94112090-1) UNRELEASED; urgency=low
     package is not ready. Can you investigate?
 
   * Initial Release. (Closes: #717907)
+
+  [ gregor herrmann ]
+  * Strip trailing slash from metacpan URLs.
 
  -- Onur Aslan <onur@onur.im>  Tue, 23 Jul 2013 17:16:13 +0300
