@@ -1,0 +1,35 @@
+Subject: Plugins: Call initializers in correct order
+
+According to Class::MOP::Attribute manual:
+
+Note that there is no guarantee that attributes are initialized in any
+particular order, so you cannot rely on the value of some other attribute when
+generating the default.
+
+This is exactly what was being done, causing test failures ever since hash key
+order was randomized (RT#82142):
+
+Can't use an undefined value as an ARRAY reference at lib/Scrappy/Plugin.pm line 21.
+
+Let's just initialize plugins() lazily -- it will still be initialized upon the
+instance creation, since registry() will trigger it, just in the correct order
+now.
+
+From: Lubomir Rintel <lkundrak@v3.sk>
+Forwarded: https://rt.cpan.org/Ticket/Display.html?id=82142#txn-1359672
+Bug: https://rt.cpan.org/Public/Bug/Display.html?id=82142#txn-1359672
+
+--- a/lib/Scrappy/Plugin.pm
++++ b/lib/Scrappy/Plugin.pm
+@@ -31,8 +31,10 @@
+ has plugins => (
+     is      => 'ro',
+     isa     => 'Any',
++    # registry() uses us in their initializer, defer our own
++    # initialization until then
++    lazy    => 1,
+     default => sub {
+-
+         my @plugins = ();
+ 
+         # fix for bug found by Patrick Woo

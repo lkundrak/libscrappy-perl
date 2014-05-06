@@ -1,0 +1,90 @@
+Subject: Fix Scrapy::Scraper::Control and its test
+
+It's rather broken, possibly due to some careless copy & pasting:
+
+* in restrict() and allow(), "next" outside loops is used in place
+  of function returns
+* in is_allowed(), argument is assumed to be an URI instance despite the
+  function takes a string. Also, a chunk of code (apparently copied from
+  lines above), mistakes allowed() for restricted() and apart from that
+  leaves the logic reversed.
+* Moreover, the test does not pass a valid URI to a subroutine that
+  expects one
+
+The silly condition is left as entertainment for future generations:
+
+     if (keys %{$self->restricted}) {
+         if (keys %{$self->restricted}) {
+
+From: Lubomir Rintel <lkundrak@v3.sk>
+Forwarded: https://rt.cpan.org/Ticket/Display.html?id=95420#txn-1359937
+Bug: https://rt.cpan.org/Ticket/Display.html?id=95420
+
+--- a/lib/Scrappy/Scraper/Control.pm
++++ b/lib/Scrappy/Scraper/Control.pm
+@@ -28,7 +28,7 @@ sub allow {
+ 
+     $target = URI->new($target);
+ 
+-    next
++    return $i
+       unless $target
+           && ("URI::http" eq ref $target || "URI::https" eq ref $target);
+ 
+@@ -49,7 +49,7 @@ sub restrict {
+ 
+     $target = URI->new($target);
+ 
+-    next
++    return $i
+       unless $target
+           && ("URI::http" eq ref $target || "URI::https" eq ref $target);
+ 
+@@ -79,6 +79,7 @@ sub is_allowed {
+         $url  = $url->request->uri;
+     }
+ 
++    $url = URI->new($url);
+     return 0 unless ("URI::http" eq ref $url || "URI::https" eq ref $url);
+ 
+     $url = $url->host;
+@@ -107,19 +108,18 @@ sub is_allowed {
+     # is it explicitly restricted
+     if (keys %{$self->restricted}) {
+         if (keys %{$self->restricted}) {
+-
+             # return 0 if $self->restricted->{$url};
+             if ($self->restricted->{$url}) {
+                 if ($self->restricted->{$url}->{if}) {
+-                    return $self->_check_constraints(
+-                        $self->allowed->{$url}->{if}, $http);
++                    return ! $self->_check_constraints(
++                        $self->restricted->{$url}->{if}, $http);
+                 }
+                 else {
+-                    return 1;
++                    return 0;
+                 }
+             }
+             else {
+-                return 0;
++                return 1;
+             }
+         }
+     }
+diff --git a/t/00_test_function_control.t b/t/00_test_function_control.t
+index 2270d12..7cd3407 100644
+--- a/t/00_test_function_control.t
++++ b/t/00_test_function_control.t
+@@ -13,7 +13,7 @@ ok  $s->control->is_allowed('http://search.cpan.org/recent');
+ ok  $s->control->is_allowed('http://search.cpan.org/dist/Scrappy/lib/Scrappy.pm');
+ ok  ! $s->control->is_allowed('http://www.google.com/');
+ ok  0 == keys %{$s->control->restricted}; # no restriction rules set
+-ok  $s->control->restrict('search.cpan.org');
++ok  $s->control->restrict('http://search.cpan.org');
+ ok  ! $s->control->is_allowed('http://search.cpan.org/');
+ ok  ! $s->control->is_allowed('http://search.cpan.org/recent');
+ ok  ! $s->control->is_allowed('http://search.cpan.org/dist/Scrappy/lib/Scrappy.pm');
+-- 
+1.9.0
+
